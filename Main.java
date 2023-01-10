@@ -1,25 +1,27 @@
 public class Main {
     public static void main(String[] args) {
         char asterisco = '*';
-        char[][] array = new char[10][10];
-        int a = 5;
+        char[][] array = new char[11][11];
+        int sum = 5;
+        int rest = 5;
         for (int i = 0; i < array.length; i++) {
+            if(i > 5){
+                break;
+            }
+            ++sum;
+            --rest;
             for (int j = 0; j < array.length; j++) {
-                int sumaA = a++;
-                int restA = a--;
                 if(i == 0 && j == 5){
                     array[i][j] = asterisco;
-                    sumaA = a;
-                    restA = a;
                     break;
                 }
                 else if(i > 0){
-                    if(i == 5){
+                    if(i == 4){
                         array[i][j] = asterisco;
                     }
-                    else{
-                        array[i][restA] = asterisco;
-                        array[i][sumaA] = asterisco;
+                    else if(j == rest && rest < array.length|| j == sum && sum < array.length){
+                        array[i][rest] = asterisco;
+                        array[i][sum] = asterisco;
                         break;
                     }
                 }
@@ -28,7 +30,18 @@ public class Main {
         imprimirNumeros(array);
     }
     public static void imprimirNumeros(char[][] array){
-        
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                System.out.print(" ");
+                char temp = array[i][j];
+                if(temp == '*'){
+                    System.out.print(array[i][j]);
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
     }
-
 }
