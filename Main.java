@@ -27,9 +27,9 @@ public class Main {
                 }
             }
         }
-        imprimirNumeros(array);
+        imprimirTrianguloArriba(array);
     }
-    public static void imprimirNumeros(char[][] array){
+    public static void imprimirTrianguloArriba(char[][] array){
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 System.out.print(" ");
