@@ -1,5 +1,9 @@
 public class Main {
     public static void main(String[] args) {
+        imprimirTrianguloArriba();
+        imprimirTrianguloAbajo();
+    }
+    public static void imprimirTrianguloArriba(){
         char asterisco = '*';
         char[][] array = new char[11][11];
         int sum = 5;
@@ -27,9 +31,6 @@ public class Main {
                 }
             }
         }
-        imprimirTrianguloArriba(array);
-    }
-    public static void imprimirTrianguloArriba(char[][] array){
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array.length; j++) {
                 System.out.print(" ");
@@ -43,5 +44,9 @@ public class Main {
             }
             System.out.println();
         }
+    }
+
+    public static void imprimirTrianguloAbajo(){
+        System.out.print("Helloo");
     }
 }
