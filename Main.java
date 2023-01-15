@@ -2,7 +2,6 @@ public class Main {
     public static void main(String[] args) {
         char asterisco = '*';
         imprimirTrianguloArriba(asterisco);
-        imprimirTrianguloAbajo();
     }
     public static void imprimirTrianguloArriba(char asterisco){
         char[][] array = new char[11][11];
@@ -12,7 +11,6 @@ public class Main {
             if(i > 5){
                 break;
             }
-
             for (int j = 0; j < array.length; j++) {
                 if(i == 0 && j == 5){
                     array[i][j] = asterisco;
@@ -45,9 +43,35 @@ public class Main {
             }
             System.out.println();
         }
+        imprimirTrianguloInvertido(array,asterisco);
     }
 
-    public static void imprimirTrianguloAbajo(){
-        System.out.print("Helloo");
+    public static void imprimirTrianguloInvertido(char[][] array, char asterisco){
+        char[][] arrayInvertido = new char[11][11];
+        int temp = arrayInvertido.length - 1;
+        for (int i = 0; i < arrayInvertido.length; i++) {
+            if(i > 5){
+                break;
+            }
+            for (int j = 0; j < arrayInvertido.length; j++) {
+                if(array[i][j] == '*'){
+                    arrayInvertido[temp][j] = asterisco;
+                }
+            }
+            temp--;
+        }
+        for (int i = 0; i < arrayInvertido.length; i++) {
+            for (int j = 0; j < arrayInvertido.length; j++) {
+                System.out.print(" ");
+                char controlador = arrayInvertido[i][j];
+                if(controlador == '*'){
+                    System.out.print(arrayInvertido[i][j]);
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
     }
 }
