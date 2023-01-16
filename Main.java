@@ -103,6 +103,27 @@ public class Main {
         imprimirFlechaIzquierda(array, asterisco);
     }
     public static void imprimirFlechaIzquierda(char[][] array, char asterisco){
-        
+        char[][] arrayFlechaIzquierda = new char[11][11];
+        for (int i = 0; i < arrayFlechaIzquierda.length; i++) {
+            for (int j = 0; j < arrayFlechaIzquierda.length; j++) {
+                if(array[i][j] == '*'){
+                    arrayFlechaIzquierda[j][i] = asterisco;
+                }
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < arrayFlechaIzquierda.length; i++) {
+            for (int j = 0; j < arrayFlechaIzquierda.length; j++) {
+                System.out.print(" ");
+                char controlador = arrayFlechaIzquierda[i][j];
+                if(controlador == '*'){
+                    System.out.print(arrayFlechaIzquierda[i][j]);
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
     }
 }
