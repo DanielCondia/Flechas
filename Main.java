@@ -73,5 +73,33 @@ public class Main {
             }
             System.out.println();
         }
+        imprimirFlechaDerecha(array, asterisco);
     }
+    public static void imprimirFlechaDerecha(char[][] array, char asterisco){
+         char[][] arrayFlechaDerecha = new char[11][11];
+         int temp = arrayFlechaDerecha.length - 1;
+        for (int i = 0; i < arrayFlechaDerecha.length; i++) {
+            for (int j = 0; j < arrayFlechaDerecha.length; j++) {
+                if(array[i][j] == '*'){
+                    arrayFlechaDerecha[j][temp] = asterisco;
+                }
+            }
+            temp--;
+        }
+        System.out.println();
+        for (int i = 0; i < arrayFlechaDerecha.length; i++) {
+            for (int j = 0; j < arrayFlechaDerecha.length; j++) {
+                System.out.print(" ");
+                char controlador = arrayFlechaDerecha[i][j];
+                if(controlador == '*'){
+                    System.out.print(arrayFlechaDerecha[i][j]);
+                }
+                else{
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+    }
+
 }
