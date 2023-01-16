@@ -100,6 +100,9 @@ public class Main {
             }
             System.out.println();
         }
+        imprimirFlechaIzquierda(array, asterisco);
     }
-
+    public static void imprimirFlechaIzquierda(char[][] array, char asterisco){
+        
+    }
 }
